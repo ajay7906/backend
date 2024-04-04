@@ -29,6 +29,9 @@ app.use("/api/v1/job", jobRoute);
 app.use("*", (req, res) => {
     res.status(404).json({ errorMessage: "Route not found!" });
 });
+app.use("/", (req, res) => {
+    res.status(404).json({ errorMessage: "done!" });
+});
 
 app.use((error, req, res, next) => {
     console.log(error);
